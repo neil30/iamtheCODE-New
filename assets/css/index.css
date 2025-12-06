@@ -3,7 +3,7 @@
     --color-primary: #e53935;
     /* main brand color */
     --color-primary-light: #ef5350;
-    --color-primary-dark: #d32f2f;
+    --color-primary-dark: #991b1b;
 
     --color-secondary: #f44336;
     /* accent color */
@@ -88,28 +88,33 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* --- Navbar Container --- */
 .navbar {
     color: white;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 25px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
-    transition: background 0.3s ease, padding 0.3s ease;
+    transition: background 0.7s ease, padding 0.7s ease;
 }
 
 .navbar.default {
     background: transparent;
-    padding: 20px 25px;
+    padding: 50px 50px;
 }
 
 .navbar.scrolled {
-    background: var(--bg-dark);
+    background: var(--color-primary-dark);
+    height: 80px;
     padding: 5px 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
@@ -124,9 +129,10 @@ body {
 
 .left-img {
     border-radius: 50%;
-    height: 100px;
+    height: 80px;
     width: auto;
     transition: transform 0.3s ease, height 0.3s ease;
+    cursor: pointer;
 }
 
 @media (max-width: 1100px) {
@@ -147,8 +153,9 @@ body {
 }
 
 .left-text {
-    font-size: 1.2em;
+    font-size: 1.125em;
     font-weight: 600;
+    cursor: pointer;
 }
 
 /* Animate logo when nav opens */
@@ -198,6 +205,7 @@ body {
 .right-section img {
     height: 50px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 /* --- Hamburger Icon --- */
@@ -250,7 +258,6 @@ body {
         text-align: center;
 
         display: none;
-        /* hidden default */
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
@@ -356,10 +363,6 @@ body {
     animation-delay: 0.40s;
 }
 
-.phd {
-    height: 100vh;
-}
-
 .landing {
     height: 100vh;
     width: 100%;
@@ -380,14 +383,11 @@ body {
     background-attachment: fixed;
 }
 
-
-/* Optional: darker overlay for readability */
 .landing::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.4);
-    /* adjust opacity */
     z-index: 1;
 }
 
@@ -395,15 +395,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* centers hero-box horizontally */
     justify-content: center;
-    /* optional: centers vertically */
     height: 100%;
     width: 100%;
     position: relative;
     z-index: 2;
 }
-
 
 .landing h1 {
     font-size: var(--fs-xxl);
@@ -420,40 +417,70 @@ body {
 .logo-strip {
     display: flex;
     gap: 50px;
-    /* spacing between images */
     justify-content: center;
-    /* center horizontally */
     align-items: center;
-    /* align vertically */
-    margin-bottom: 30px;
-    /* space above your heading */
     flex-wrap: wrap;
-    /* allows wrapping on smaller screens */
+    position: absolute;
+    top: 25%;
 }
 
 .logo-strip img {
-    height: 100px;
-    /* adjust size */
+    height: 150px;
     width: auto;
-    /* keep aspect ratio */
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    /* optional style */
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-/* Hover effect (optional) */
 .logo-strip img:hover {
-    transform: scale(1.05);
+    transform: scale(1.3);
+}
+
+.logo-carousel {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .logo-strip {
+        display: none;
+    }
+
+    .logo-carousel {
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        position: absolute;
+        top: 17%;
+    }
+
+    .carousel-track {
+        display: flex;
+        width: 100%;
+    }
+
+    .carousel-track img {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        padding: 10px 0;
+    }
+
+    .logo-carousel::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .hero-box {
     padding: 30px 40px;
-    border-radius: 12px;
     text-align: center;
     max-width: 700px;
-    margin-top: 120px;
-    position: relative;
+    position: absolute;
+    bottom: 15%;
     z-index: 2;
 }
 
@@ -473,7 +500,7 @@ body {
 .hero-box .btn {
     display: inline-block;
     padding: 12px 28px;
-    background: var(--color-secondary);
+    background: var(--color-primary);
     color: white;
     font-weight: 600;
     text-decoration: none;
@@ -487,6 +514,15 @@ body {
 }
 
 /* Scroll Down Container */
+.scroll-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
 .scroll-container {
     position: relative;
     width: 24px;
@@ -570,4 +606,17 @@ body {
     to {
         opacity: 1;
     }
+}
+
+/* Content-2 */
+
+#content-2 {
+    height: 100vh;
+    padding: 5%;
+}
+
+#content-2 .container {
+    height: 100%;
+    width: 100%;
+    background-color: green;
 }

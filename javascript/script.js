@@ -17,3 +17,30 @@ window.addEventListener('scroll', handleScroll);
 
 // Initialize with default class
 navbar.classList.add('default');
+
+// Logo Carousel
+const carousel = document.querySelector('.logo-carousel');
+let index = 0;
+
+function autoScroll() {
+    const width = carousel.clientWidth;
+    index++;
+
+    carousel.scrollTo({
+        left: width * index,
+        behavior: "smooth"
+    });
+
+    if (index >= carousel.children[0].children.length) {
+        index = 0;
+    }
+}
+
+setInterval(autoScroll, 5000);
+
+// Scroll Down
+document.getElementById("scrollTrigger").addEventListener("click", () => {
+    document.getElementById("content-2").scrollIntoView({
+        behavior: "smooth"
+    });
+});
