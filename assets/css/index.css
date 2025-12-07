@@ -1048,28 +1048,28 @@ html {
     scrollbar-width: none;
 }
 
-
 #content-5 .iam-activity {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    padding: 10px;
+    margin-bottom: 2px;
+    padding: 0 30px;
 }
 
 #content-5 .act1 {
-    background-color: #dbdbdb;
+    background-color: #d39aad;
 }
 
-#content-5 .act1 {
-    background-color: #d3d3d3;
+#content-5 .act2 {
+    background-color: #d1d1d1;
 }
 
 #content-5 .iam-activity-date {
-    font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    padding: 10px 10px;
 }
+
+#content-5 .iam-activity-details {}
 
 #content-5 .iam-activity-details h3 {}
 
@@ -1078,6 +1078,11 @@ html {
 #content-5 .iam-activity-details ul li {}
 
 @media (max-width: 768px) {
+    #content-5 {
+        padding: 5% 10%;
+        background-color: var(--bg-light);
+    }
+
     #content-5 .iam-header {
         flex-direction: column;
         text-align: left;
@@ -1111,5 +1116,14 @@ html {
 
     #content-5 .iam-activity {
         flex-direction: column;
+    }
+
+    #content-5 .iam-activity-date {
+        font-size: 1.75em;
+        padding-top: 20px;
+    }
+    #content-5 .iam-activity-date h4 {
+        padding: 0;
+        margin: 0;
     }
 }
