@@ -306,7 +306,7 @@ html {
 
         display: none;
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
         z-index: -1;
     }
 
@@ -341,7 +341,6 @@ html {
         border-radius: 100px;
         text-decoration: none;
         cursor: pointer;
-        transition: all 0.3s ease;
     }
 
 }
