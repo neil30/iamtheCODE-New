@@ -16,7 +16,7 @@
     --color-secondary: #f44336;
     /* accent color */
     --color-secondary-light: #e57373;
-    --color-secondary-dark: #b71c1c;
+    --color-secondary-dark: #771515;
     --color-accent: #ffc371;
 
     /* ===== BACKGROUND COLORS ===== */
@@ -189,6 +189,7 @@ html {
     font-size: 1em;
     font-weight: 500;
     padding-bottom: 3px;
+    cursor: pointer;
 }
 
 /* Underline animation */
@@ -210,6 +211,47 @@ html {
 .nav-links a:hover::after {
     width: 100%;
 }
+
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 10px 0;
+    min-width: 180px;
+    border-radius: 6px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 9999;
+}
+
+/* Dropdown link styling */
+.nav-links .dropdown-menu a {
+    padding: 8px 15px;
+    color: white;
+    display: block;
+    font-size: 0.95em;
+}
+
+.nav-links .dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- SHOW DROPDOWN ON HOVER ---------- */
+.nav-links .dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
 
 /* --- Right Section --- */
 .right-section img {
@@ -269,7 +311,7 @@ html {
         top: 0;
         left: 0;
         width: 100%;
-        background: #991b1b;
+        background: var(--color-primary-dark);
         flex-direction: column;
         gap: 20px;
         padding: 130px 0 50px 0;
@@ -280,6 +322,19 @@ html {
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
         z-index: -1;
+    }
+
+    .nav-links .dropdown-menu {
+        display: none;
+        position: relative;
+        background: transparent;
+        margin-top: 10px;
+        gap: 3px;
+        background-color: var(--color-secondary-dark);
+    }
+
+    .dropdown input:checked ~ .dropdown-menu {
+        display: flex;
     }
 
     /* When menu is opened */
@@ -471,7 +526,7 @@ html {
         -webkit-overflow-scrolling: touch;
         display: flex;
         position: absolute;
-        top: 13%;
+        top: 10%;
     }
 
     .carousel-track {
@@ -1122,6 +1177,7 @@ html {
         font-size: 1.75em;
         padding-top: 20px;
     }
+
     #content-5 .iam-activity-date h4 {
         padding: 0;
         margin: 0;

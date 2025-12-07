@@ -38,6 +38,43 @@ function autoScroll() {
 
 setInterval(autoScroll, 5000);
 
+// Mobile Nav Bar
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Get all dropdown toggle anchors
+    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener("click", function (e) {
+            e.preventDefault(); // prevent page jump
+
+            const parentDropdown = this.parentElement;
+
+            // If already open → close it
+            if (parentDropdown.classList.contains("active")) {
+                parentDropdown.classList.remove("active");
+            }
+            else {
+                // Close any open dropdowns
+                document.querySelectorAll(".dropdown.active")
+                    .forEach(d => d.classList.remove("active"));
+
+                // Open the tapped dropdown
+                parentDropdown.classList.add("active");
+            }
+        });
+    });
+
+    // Close dropdown if user taps outside
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest(".dropdown")) {
+            document.querySelectorAll(".dropdown.active")
+                .forEach(d => d.classList.remove("active"));
+        }
+    });
+
+});
+
 // Scroll Down
 document.getElementById("scrollTrigger").addEventListener("click", () => {
     document.getElementById("content-2").scrollIntoView({
