@@ -985,6 +985,12 @@ html {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    #content-4 {
+        padding: 5% 10%;
+        background-color: var(--bg-dark);
+        color: var(--bg-light);
+    }
+
     #content-4 .iam-news-item {
         flex-direction: column;
         text-align: left;
@@ -1004,7 +1010,7 @@ html {
 
     #content-4 .gradient-divider {
         height: 10px;
-        width: 45%;
+        width: 40%;
         margin-top: 8px;
         border-radius: 3px;
         background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
