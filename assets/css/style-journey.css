@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'iam-font';
+    src: url('../fonts/CreatoDisplay-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* ===== BRAND COLORS ===== */
+    --color-primary: #e53935;
+    /* main brand color */
+    --color-primary-light: #ef5350;
+    --color-primary-dark: #991b1b;
+
+    --color-secondary: #f44336;
+    /* accent color */
+    --color-secondary-light: #e57373;
+    --color-secondary-dark: #771515;
+    --color-accent: #ffc371;
+
+    /* ===== BACKGROUND COLORS ===== */
+    --bg-main: #ffffff;
+    --bg-light: #eeeeee;
+    --bg-dark: #1c2126;
+    --bg-darker: #141414;
+
+    /* ===== TEXT COLORS ===== */
+    --text-main: #222222;
+    --text-light: #555555;
+    --text-lighter: #888888;
+    --text-invert: #ffffff;
+
+    /* ===== NEUTRALS ===== */
+    --neutral-100: #f8f9fa;
+    --neutral-200: #e9ecef;
+    --neutral-300: #dee2e6;
+    --neutral-400: #ced4da;
+    --neutral-500: #adb5bd;
+    --neutral-600: #6c757d;
+    --neutral-700: #495057;
+    --neutral-800: #343a40;
+    --neutral-900: #212529;
+
+    /* ===== BORDERS & SHADOWS ===== */
+    --border-color: #e0e0e0;
+    --shadow-soft: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+
+    /* ===== STATUS COLORS ===== */
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --info: #17a2b8;
+
+    /* ===== FONT FAMILIES ===== */
+    --font-primary: iam-font, sans-serif;
+    --font-secondary: iam-font, sans-serif;
+    --font-mono: iam-font, sans-serif;
+
+    /* ===== FONT SIZES (scale) ===== */
+    --fs-xs: 0.75rem;
+    /* 12px */
+    --fs-sm: 0.875rem;
+    /* 14px */
+    --fs-md: 1rem;
+    /* 16px */
+    --fs-lg: 1.25rem;
+    /* 20px */
+    --fs-xl: 1.5rem;
+    /* 24px */
+    --fs-xxl: 2rem;
+    /* 32px */
+
+    /* ===== FONT WEIGHTS ===== */
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* ===== LINE HEIGHT ===== */
+    --lh-tight: 1.1;
+    --lh-normal: 1.4;
+    --lh-loose: 1.7;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: iam-font, sans-serif;
+}
+
+/* --- Basic Page Reset --- */
+body {
+    margin: 0;
+    font-family: iam-font, sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#content-1 {
+    height: 100vh;
+    padding: 120px 5% 10% 5%;
+}
+
+#content-2 {
+    height: 100vh;
+}
