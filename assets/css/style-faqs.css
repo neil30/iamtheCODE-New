@@ -1,0 +1,297 @@
+@font-face {
+    font-family: 'iam-font';
+    src: url('../fonts/CreatoDisplay-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* ===== BRAND COLORS ===== */
+    --color-primary: #e53935;
+    /* main brand color */
+    --color-primary-light: #ef5350;
+    --color-primary-dark: #991b1b;
+
+    --color-secondary: #f44336;
+    /* accent color */
+    --color-secondary-light: #e57373;
+    --color-secondary-dark: #771515;
+    --color-accent: #ffc371;
+
+    /* ===== BACKGROUND COLORS ===== */
+    --bg-main: #ffffff;
+    --bg-light: #eeeeee;
+    --bg-dark: #1c2126;
+    --bg-darker: #141414;
+
+    /* ===== TEXT COLORS ===== */
+    --text-main: #222222;
+    --text-light: #555555;
+    --text-lighter: #888888;
+    --text-invert: #ffffff;
+
+    /* ===== NEUTRALS ===== */
+    --neutral-100: #f8f9fa;
+    --neutral-200: #e9ecef;
+    --neutral-300: #dee2e6;
+    --neutral-400: #ced4da;
+    --neutral-500: #adb5bd;
+    --neutral-600: #6c757d;
+    --neutral-700: #495057;
+    --neutral-800: #343a40;
+    --neutral-900: #212529;
+
+    /* ===== BORDERS & SHADOWS ===== */
+    --border-color: #e0e0e0;
+    --shadow-soft: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+
+    /* ===== STATUS COLORS ===== */
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --info: #17a2b8;
+
+    /* ===== FONT FAMILIES ===== */
+    --font-primary: iam-font, sans-serif;
+    --font-secondary: iam-font, sans-serif;
+    --font-mono: iam-font, sans-serif;
+
+    /* ===== FONT SIZES (scale) ===== */
+    --fs-xs: 0.75rem;
+    /* 12px */
+    --fs-sm: 0.875rem;
+    /* 14px */
+    --fs-md: 1rem;
+    /* 16px */
+    --fs-lg: 1.25rem;
+    /* 20px */
+    --fs-xl: 1.5rem;
+    /* 24px */
+    --fs-xxl: 2rem;
+    /* 32px */
+
+    /* ===== FONT WEIGHTS ===== */
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* ===== LINE HEIGHT ===== */
+    --lh-tight: 1.1;
+    --lh-normal: 1.4;
+    --lh-loose: 1.7;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: iam-font, sans-serif;
+}
+
+/* --- Basic Page Reset --- */
+body {
+    margin: 0;
+    font-family: iam-font, sans-serif;
+    overflow-x: hidden;
+    background-color: var(--bg-light);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#faq-header {
+    height: fit-content;
+    padding: 220px 5% 5% 5%;
+}
+
+#faq-header .container {
+    height: 100%;
+}
+
+#faq-header .iam-parent {
+    height: 400px;
+    width: 75%;
+    background-color: var(--bg-dark);
+    margin: auto;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#faq-header .iam-left {
+    width: fit-content;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    margin-right: 30px;
+}
+
+#faq-header .iam-left img {
+    height: 480px;
+}
+
+#faq-header .iam-right {
+    width: 50%;
+}
+
+#faq-header .iam-right h2 {
+    color: var(--color-primary);
+}
+
+#faq-header .iam-right h1 {
+    color: var(--bg-light);
+    padding: 0;
+    margin: 0;
+}
+
+#faq-header .iam-right p {
+    color: #afafaf;
+    max-width: 400px;
+}
+
+#faq-header a.styled-link {
+    display: inline-block;
+    padding: 10px 18px;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 12px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#faq-header a.styled-link:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#faq-header a.styled-link:active {
+    transform: scale(0.97);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+
+    #faq-header {
+        height: fit-content;
+        padding: 100px 5% 5% 5%;
+    }
+
+    #faq-header .iam-parent {
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        padding: 30px;
+        background-color: transparent;
+    }
+
+    #faq-header .iam-left {
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    #faq-header .iam-left img {
+        height: 380px;
+    }
+
+    #faq-header .iam-right {
+        width: 100%;
+        height: fit-content;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    #faq-header .iam-right h1 {
+        color: var(--bg-dark);
+    }
+
+    #faq-header .iam-right p {
+        color: var(--text-light);
+        max-width: 400px;
+    }
+}
+
+#content-1 {
+    padding: 20px 5% 10% 5%;
+}
+
+.faq-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    background: #fff;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 18px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #222;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #f0f0f0;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    background: #fafafa;
+    transition: all 0.4s ease;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 15px 20px;
+}
+
+.faq-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+#content-2 {
+    height: 100vh;
+}

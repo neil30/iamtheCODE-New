@@ -288,10 +288,10 @@ html {
     }
 
     #content-2 .gradient-divider {
-    height: 10px;
-    width: 45%;
-    margin: auto;
-    border-radius: 3px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-}
+        height: 10px;
+        width: 45%;
+        margin: auto;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    }
 }

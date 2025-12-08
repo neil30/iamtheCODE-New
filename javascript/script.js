@@ -53,3 +53,14 @@ document.querySelectorAll('#iam-cards .flip-card').forEach(card => {
     });
 });
 
+// FAQs
+const faqs = document.querySelectorAll(".faq-item");
+
+faqs.forEach((faq) => {
+    faq.querySelector(".faq-question").addEventListener("click", () => {
+        faqs.forEach((item) => {
+            if (item !== faq) item.classList.remove("active");
+        });
+        faq.classList.toggle("active");
+    });
+});
