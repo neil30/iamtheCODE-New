@@ -104,61 +104,70 @@ html {
 
 #faq-header {
     height: fit-content;
-    padding: 220px 5% 5% 5%;
+    width: 100%;
+    padding: 120px 5% 5% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #faq-header .container {
-    height: 100%;
+    height: fit-content;
+    border-radius: 25px;
+    padding: 40px;
+    margin: auto;
 }
 
 #faq-header .iam-parent {
-    height: 400px;
-    width: 75%;
-    background-color: var(--bg-dark);
     margin: auto;
     border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
 }
 
 #faq-header .iam-left {
-    width: fit-content;
+    width: 40%;
+}
+
+#faq-header .img-container {
+    width: 100%;
     display: flex;
-    justify-content: baseline;
     align-items: center;
-    margin-right: 30px;
+    justify-content: baseline;
+    margin-top: 100px;
 }
 
 #faq-header .iam-left img {
     height: 480px;
 }
 
-#faq-header .iam-right {
-    width: 50%;
-}
-
-#faq-header .iam-right h2 {
+#faq-header .iam-left h2 {
     color: var(--color-primary);
 }
 
-#faq-header .iam-right h1 {
-    color: var(--bg-light);
+#faq-header .iam-left h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--text-main);
     padding: 0;
     margin: 0;
 }
 
-#faq-header .iam-right p {
-    color: #afafaf;
-    max-width: 400px;
+#faq-header .iam-left p {
+    color: var(--text-light);
+    max-width: 380px;
 }
 
 #faq-header a.styled-link {
-    display: inline-block;
+    display: none;
     padding: 10px 18px;
-    background: transparent;
+    background: var(--color-primary);
     border: 2px solid var(--color-primary);
-    color: var(--color-primary);
+    color: var(--text-invert);
     border-radius: 12px;
     text-decoration: none;
     letter-spacing: 0.3px;
@@ -180,12 +189,19 @@ html {
     transform: scale(0.97);
 }
 
+#faq-header .iam-right {
+    width: 60%;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
 
     #faq-header {
         height: fit-content;
-        padding: 100px 5% 5% 5%;
+    }
+
+    #faq-header .container {
+        padding: 0;
     }
 
     #faq-header .iam-parent {
@@ -193,24 +209,22 @@ html {
         height: fit-content;
         flex-direction: column;
         padding: 30px;
-        background-color: transparent;
     }
 
     #faq-header .iam-left {
         width: 100%;
-        justify-content: center;
-        margin-right: 0;
     }
 
     #faq-header .iam-left img {
-        height: 380px;
+        width: 100%;
+    }
+
+    #faq-header .img-container {
+        margin-top: 50px;
     }
 
     #faq-header .iam-right {
         width: 100%;
-        height: fit-content;
-        padding: 20px;
-        margin: 10px;
     }
 
     #faq-header .iam-right h1 {
@@ -220,6 +234,10 @@ html {
     #faq-header .iam-right p {
         color: var(--text-light);
         max-width: 400px;
+    }
+
+    #faq-header a.styled-link {
+        display: inline-block;
     }
 }
 

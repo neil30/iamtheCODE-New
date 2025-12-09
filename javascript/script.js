@@ -64,3 +64,11 @@ faqs.forEach((faq) => {
         faq.classList.toggle("active");
     });
 });
+
+document.getElementById('scroll-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth'
+    });
+});
