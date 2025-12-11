@@ -1,0 +1,287 @@
+@font-face {
+    font-family: 'iam-font';
+    src: url('../fonts/CreatoDisplay-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* ===== BRAND COLORS ===== */
+    --color-primary: #e53935;
+    /* main brand color */
+    --color-primary-light: #ef5350;
+    --color-primary-dark: #991b1b;
+
+    --color-secondary: #f44336;
+    /* accent color */
+    --color-secondary-light: #e57373;
+    --color-secondary-dark: #771515;
+    --color-accent: #ffc371;
+
+    /* ===== BACKGROUND COLORS ===== */
+    --bg-main: #fcfcfc;
+    --bg-light: #eeeeee;
+    --bg-dark: #1c2126;
+    --bg-darker: #141414;
+
+    /* ===== TEXT COLORS ===== */
+    --text-main: #222222;
+    --text-light: #555555;
+    --text-lighter: #888888;
+    --text-invert: #ffffff;
+
+    /* ===== NEUTRALS ===== */
+    --neutral-100: #f8f9fa;
+    --neutral-200: #e9ecef;
+    --neutral-300: #dee2e6;
+    --neutral-400: #ced4da;
+    --neutral-500: #adb5bd;
+    --neutral-600: #6c757d;
+    --neutral-700: #495057;
+    --neutral-800: #343a40;
+    --neutral-900: #212529;
+
+    /* ===== BORDERS & SHADOWS ===== */
+    --border-color: #e0e0e0;
+    --shadow-soft: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+
+    /* ===== STATUS COLORS ===== */
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --info: #17a2b8;
+
+    /* ===== FONT FAMILIES ===== */
+    --font-primary: iam-font, sans-serif;
+    --font-secondary: iam-font, sans-serif;
+    --font-mono: iam-font, sans-serif;
+
+    /* ===== FONT SIZES (scale) ===== */
+    --fs-xs: 0.75rem;
+    /* 12px */
+    --fs-sm: 0.875rem;
+    /* 14px */
+    --fs-md: 1rem;
+    /* 16px */
+    --fs-lg: 1.25rem;
+    /* 20px */
+    --fs-xl: 1.5rem;
+    /* 24px */
+    --fs-xxl: 2rem;
+    /* 32px */
+
+    /* ===== FONT WEIGHTS ===== */
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* ===== LINE HEIGHT ===== */
+    --lh-tight: 1.1;
+    --lh-normal: 1.4;
+    --lh-loose: 1.7;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: iam-font, sans-serif;
+}
+
+/* --- Basic Page Reset --- */
+body {
+    margin: 0;
+    font-family: iam-font, sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#content-1 {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-light);
+}
+
+#content-1 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#content-1 .iam-parent {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-main);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 80px;
+    box-shadow: -10px 15px 0px 0px var(--color-primary-dark);
+}
+
+#content-1 .iam-left {
+    padding: 10px 120px 10px 30px;
+}
+
+#content-1 .iam-left h3 {
+    color: var(--color-primary);
+    margin: 10px 0;
+    padding: 0;
+}
+
+#content-1 .iam-left h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+#content-1 .iam-left p {
+    color: var(--text-light);
+}
+
+#content-1 .gradient-divider {
+    height: 10px;
+    width: 60%;
+    margin-top: 8px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+#content-1 .iam-right {
+    width: fit-content;
+    max-height: 280px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#content-1 .iam-right img {
+    border-radius: 20px;
+    height: 280px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #content-1 {
+        height: fit-content;
+        padding: 10%;
+    }
+
+    #content-1 .iam-parent {
+        flex-direction: column-reverse;
+    }
+
+    #content-1 .iam-left {
+        width: 100%;
+        padding: 10%;
+    }
+
+    #content-1 .iam-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #content-1 .iam-right img {
+        width: 100%;
+    }
+}
+
+#content-2 {
+    height: fit-content;
+    background-image: url("/assets/img/imgs-sdg/taal-bg-1.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+.projects-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.project-wrapper {
+    position: relative;
+    width: 300px;
+}
+
+.img-container {
+    width: 100%;
+    height: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: 80px;
+    z-index: 5;
+}
+
+
+.img-container img {
+    width: 92%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.project-card {
+    background: #eeeeee;
+    border-radius: 10px;
+    padding: 80px 25px 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    height: auto;
+    min-height: 320px;
+    position: relative;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    line-height: 1.4rem;
+    margin-bottom: 5px;
+    text-align: justify;
+}
+
+.read-more {
+    margin-top: auto;
+    color: var(--color-primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+
+#content-2 .gradient-divider {
+    height: 10px;
+    width: 60%;
+    margin-top: 8px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
