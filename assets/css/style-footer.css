@@ -1,0 +1,221 @@
+/* Replace MyCustomFont with the actual font name */
+@font-face {
+    font-family: 'iam-font';
+    src: url('../fonts/CreatoDisplay-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* ===== BRAND COLORS ===== */
+    --color-primary: #e53935;
+    /* main brand color */
+    --color-primary-light: #ef5350;
+    --color-primary-dark: #991b1b;
+
+    --color-secondary: #f44336;
+    /* accent color */
+    --color-secondary-light: #e57373;
+    --color-secondary-dark: #771515;
+    --color-accent: #ffc371;
+
+    /* ===== BACKGROUND COLORS ===== */
+    --bg-main: #ffffff;
+    --bg-light: #eeeeee;
+    --bg-dark: #1c2126;
+    --bg-darker: #141414;
+
+    /* ===== TEXT COLORS ===== */
+    --text-main: #222222;
+    --text-light: #555555;
+    --text-lighter: #888888;
+    --text-invert: #ffffff;
+
+    /* ===== NEUTRALS ===== */
+    --neutral-100: #f8f9fa;
+    --neutral-200: #e9ecef;
+    --neutral-300: #dee2e6;
+    --neutral-400: #ced4da;
+    --neutral-500: #adb5bd;
+    --neutral-600: #6c757d;
+    --neutral-700: #495057;
+    --neutral-800: #343a40;
+    --neutral-900: #212529;
+
+    /* ===== BORDERS & SHADOWS ===== */
+    --border-color: #e0e0e0;
+    --shadow-soft: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+
+    /* ===== STATUS COLORS ===== */
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --info: #17a2b8;
+
+    /* ===== FONT FAMILIES ===== */
+    --font-primary: iam-font, sans-serif;
+    --font-secondary: iam-font, sans-serif;
+    --font-mono: iam-font, sans-serif;
+
+    /* ===== FONT SIZES (scale) ===== */
+    --fs-xs: 0.75rem;
+    /* 12px */
+    --fs-sm: 0.875rem;
+    /* 14px */
+    --fs-md: 1rem;
+    /* 16px */
+    --fs-lg: 1.25rem;
+    /* 20px */
+    --fs-xl: 1.5rem;
+    /* 24px */
+    --fs-xxl: 2rem;
+    /* 32px */
+
+    /* ===== FONT WEIGHTS ===== */
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* ===== LINE HEIGHT ===== */
+    --lh-tight: 1.1;
+    --lh-normal: 1.4;
+    --lh-loose: 1.7;
+}
+
+/* -------------------------------- */
+/* FOOTER GENERAL STYLE */
+/* -------------------------------- */
+
+.site-footer {
+    position: relative;
+    background: #8b1d1d;
+    /* fallback */
+    color: white;
+    padding: 60px 5% 0;
+    overflow: hidden;
+}
+
+/* Background image overlay */
+#footer-top .footer-bg-overlay {
+    background: url("../img/imgs-footer/bg-footer.png") no-repeat center center/cover;
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+#footer-top .footer-content {
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+
+/* Columns layout */
+#footer-top .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 40px;
+    text-decoration: none;
+}
+
+#footer-top .footer-col h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#footer-top .footer-col a {
+    text-decoration: none;
+    color: var(--text-invert);
+    opacity: 0.8;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+#footer-top .footer-col a:hover {
+    opacity: 1;
+    color: white;
+}
+
+#footer-top .footer-col ul,
+li {
+    list-style: none;
+    padding-left: 20px;
+    margin: 4px 0;
+}
+
+/* Divider lines */
+#footer-top .footer-line {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 25px 0;
+}
+
+/* Container with lines and icons centered */
+#footer-top .footer-icons-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 100px 0 40px 0;
+}
+
+/* Left and right lines */
+#footer-top .footer-icons-line .line {
+    flex-grow: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Icons group */
+#footer-top .footer-icons {
+    display: flex;
+    gap: 30px;
+}
+
+/* Circle container for icons */
+#footer-top .icon-circle {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon size */
+#footer-top .icon-circle img {
+    width: 50px;
+}
+
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+    }
+}
+
+#footer-bottom {
+    background-color: var(--bg-dark);
+    padding: 20px 0 5px 0;
+}
+
+#footer-bottom p {
+    color: var(--text-invert);
+}
+
+/* Logo */
+.footer-logo img {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+}
+
+/* Copyright text */
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}

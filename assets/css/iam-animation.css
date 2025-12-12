@@ -1,0 +1,98 @@
+/* Start hidden (before entering viewport) */
+.animate {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease-out;
+}
+
+/* Fade In */
+.fade-in {
+    opacity: 0;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide Up */
+.slide-up {
+    transform: translateY(20px);
+}
+
+.slide-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide Left */
+.slide-left {
+    transform: translateX(20px);
+}
+
+.slide-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide Right */
+.slide-right {
+    transform: translateX(-20px);
+}
+
+.slide-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale In */
+.scale-in {
+    transform: scale(0.9);
+}
+
+.scale-in.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Bounce In */
+.bounce-in {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.bounce-in.show {
+    opacity: 1;
+    animation: bounceIn 0.6s ease-out forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    80% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Delay Utilities (in milliseconds) */
+.delay-100 { transition-delay: 0.1s; animation-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; animation-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; animation-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; animation-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; animation-delay: 0.5s; }
+.delay-600 { transition-delay: 0.6s; animation-delay: 0.6s; }
+.delay-700 { transition-delay: 0.8s; animation-delay: 0.8s; }
+.delay-800 { transition-delay: 0.7s; animation-delay: 0.7s; }
+.delay-1000 { transition-delay: 1s; animation-delay: 1s; }

@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/iam-animation.css" />
+  <link rel="stylesheet" href="assets/css/style-footer.css" />
   <title>iamtheCODE</title>
 </head>
 
@@ -148,7 +150,7 @@
 
         <div class="iam-left">
 
-          <div class="iam-wwdo">
+          <div class="iam-wwdo animate fade-in delay-300">
             <div class="iam-wwdo-img">
               <img src="assets/img/imgs-index/logos/logo-journey.png" alt="journey">
             </div>
@@ -164,7 +166,7 @@
             </div>
           </div>
 
-          <div class="iam-wwdo">
+          <div class="iam-wwdo animate fade-in delay-500">
             <div class="iam-wwdo-img">
               <img src="assets/img/imgs-index/logos/logo-project.png" alt="journey">
             </div>
@@ -180,7 +182,7 @@
             </div>
           </div>
 
-          <div class="iam-wwdo">
+          <div class="iam-wwdo animate fade-in delay-700">
             <div class="iam-wwdo-img">
               <img src="assets/img/imgs-index/logos/logo-sdg.png" alt="journey">
             </div>
@@ -197,7 +199,7 @@
           </div>
         </div>
 
-        <div class="iam-right">
+        <div class="iam-right animate slide-left delay-500">
           <div class="iam-text">
 
             <h2>WHAT WE DO</h2>
@@ -347,15 +349,86 @@
           </div>
 
         </div>
-
-
       </div>
     </div>
   </section>
 
+  <footer id="footer-top" class="site-footer">
+
+    <div class="footer-bg-overlay"></div>
+
+    <div class="footer-content container">
+      <h3>SITE LINKS</h3>
+      <div class="footer-columns">
+
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <ul>
+              <li><a href="#">iamtheCODE</a></li>
+              <li><a href="#">Implementation Team</a></li>
+            </ul>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">Journey</a></li>
+            <li><a href="#">Accomplishments</a></li>
+            <ul>
+              <li><a href="#">Sample Project</a></li>
+              <li><a href="#">Testimonials</a></li>
+            </ul>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <ul>
+            <li><a href="#">SDG</a></li>
+            <li><a href="#">Acknowledgement</a></li>
+            <li><a href="#">Accomplishments</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="footer-line">
+
+      <div class="footer-icons-line">
+        <div class="line"></div>
+
+        <div class="footer-icons">
+          <a href="#" class="icon-circle">
+            <img src="assets/img/imgs-footer/footer-fb.png" alt="Facebook">
+          </a>
+          <a href="#" class="icon-circle">
+            <img src="assets/img/imgs-footer/footer-email.png" alt="Email">
+          </a>
+        </div>
+
+        <div class="line"></div>
+      </div>
+
+    </div>
+  </footer>
+
+  <section id="footer-bottom">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="assets/img/imgs-footer/logo-ths.png" alt="school logo">
+      </div>
+
+      <p class="copyright">
+        © 2025 Taal High School | iamtheCODE journey<br>
+        All rights reserved.
+      </p>
+    </div>
+  </section>
 
 
   <script src="javascript/script.js"></script>
+  <script src="javascript/script-animation.js"></script>
   <script>
     // Scroll Down
     document.getElementById("scrollTrigger").addEventListener("click", () => {
