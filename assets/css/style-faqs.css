@@ -233,10 +233,6 @@ html {
     }
 }
 
-#content-1 {
-    padding: 20px 5% 10% 5%;
-}
-
 .faq-container {
     max-width: 700px;
     margin: 0 auto;
@@ -300,8 +296,4 @@ html {
 
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
-}
-
-#content-2 {
-    height: 100vh;
 }
