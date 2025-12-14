@@ -1,0 +1,438 @@
+/* Replace MyCustomFont with the actual font name */
+@font-face {
+    font-family: 'iam-font';
+    src: url('../fonts/CreatoDisplay-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* ===== BRAND COLORS ===== */
+    --color-primary: #e53935;
+    /* main brand color */
+    --color-primary-light: #ef5350;
+    --color-primary-dark: #991b1b;
+
+    --color-secondary: #f44336;
+    /* accent color */
+    --color-secondary-light: #e57373;
+    --color-secondary-dark: #771515;
+    --color-accent: #ffc371;
+
+    /* ===== BACKGROUND COLORS ===== */
+    --bg-main: #ffffff;
+    --bg-light: #eeeeee;
+    --bg-dark: #1c2126;
+    --bg-darker: #141414;
+
+    /* ===== TEXT COLORS ===== */
+    --text-main: #222222;
+    --text-light: #555555;
+    --text-lighter: #888888;
+    --text-invert: #ffffff;
+
+    /* ===== NEUTRALS ===== */
+    --neutral-100: #f8f9fa;
+    --neutral-200: #e9ecef;
+    --neutral-300: #dee2e6;
+    --neutral-400: #ced4da;
+    --neutral-500: #adb5bd;
+    --neutral-600: #6c757d;
+    --neutral-700: #495057;
+    --neutral-800: #343a40;
+    --neutral-900: #212529;
+
+    /* ===== BORDERS & SHADOWS ===== */
+    --border-color: #e0e0e0;
+    --shadow-soft: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+
+    /* ===== STATUS COLORS ===== */
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --info: #17a2b8;
+
+    /* ===== FONT FAMILIES ===== */
+    --font-primary: iam-font, sans-serif;
+    --font-secondary: iam-font, sans-serif;
+    --font-mono: iam-font, sans-serif;
+
+    /* ===== FONT SIZES (scale) ===== */
+    --fs-xs: 0.75rem;
+    /* 12px */
+    --fs-sm: 0.875rem;
+    /* 14px */
+    --fs-md: 1rem;
+    /* 16px */
+    --fs-lg: 1.25rem;
+    /* 20px */
+    --fs-xl: 1.5rem;
+    /* 24px */
+    --fs-xxl: 2rem;
+    /* 32px */
+
+    /* ===== FONT WEIGHTS ===== */
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* ===== LINE HEIGHT ===== */
+    --lh-tight: 1.1;
+    --lh-normal: 1.4;
+    --lh-loose: 1.7;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: iam-font, sans-serif;
+}
+
+/* --- Basic Page Reset --- */
+body {
+    margin: 0;
+    font-family: iam-font, sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Navbar Container --- */
+.navbar {
+    color: white;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background 0.7s ease, padding 0.7s ease;
+}
+
+.navbar.default {
+    background: transparent;
+    padding: 50px 50px;
+}
+
+.navbar.scrolled {
+    background: var(--color-primary-dark);
+    height: 80px;
+    padding: 5px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.548);
+}
+
+/* --- Left Section --- */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.4s ease;
+}
+
+.left-img {
+    border-radius: 50%;
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease, height 0.3s ease;
+    cursor: pointer;
+}
+
+.left-text {
+    font-size: 1.125em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Animate logo when nav opens */
+#menu-toggle:checked~.left-section .left-img {
+    transform: scale(0.85) rotate(-5deg);
+}
+
+/* --- Middle Nav Links --- */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+/* Underline animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: rgba(136, 15, 15, 0.829);
+    padding: 10px 0;
+    min-width: 180px;
+    border-radius: 6px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 9999;
+}
+
+/* Dropdown link styling */
+.nav-links .dropdown-menu a {
+    padding: 8px 15px;
+    color: white;
+    display: block;
+    font-size: 0.95em;
+}
+
+.nav-links .dropdown-menu a:hover {
+    background: rgba(206, 80, 80, 0.15);
+}
+
+.nav-links .sign-in {
+    display: none;
+}
+
+/* ---------- SHOW DROPDOWN ON HOVER ---------- */
+.nav-links .dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+
+/* --- Right Section --- */
+.right-section img {
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* --- Hamburger Icon --- */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+/*** Animated Hamburger to X ***/
+.hamburger::before {
+    content: "☰";
+    display: block;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+#menu-toggle:checked+.hamburger::before {
+    content: "✖";
+    transform: rotate(180deg);
+}
+
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 950px) {
+
+    .navbar.default {
+        padding: 25px 25px;
+    }
+
+    .navbar.scrolled {
+        padding: 5px 15px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .right-section {
+        display: none;
+    }
+
+    /* Mobile dropdown */
+    .nav-links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--color-primary-dark);
+        flex-direction: column;
+        gap: 20px;
+        padding: 130px 40px 50px 40px;
+        text-align: left;
+
+        display: none;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+        z-index: -1;
+    }
+
+    .nav-links .dropdown-menu {
+        display: block;
+        position: relative;
+        top: 0;
+        background: transparent;
+        margin-top: 20px;
+        gap: 3px;
+        background-color: var(--color-secondary-dark);
+        padding-left: 10px;
+    }
+
+    /* When menu is opened */
+    #menu-toggle:checked~.nav-links {
+        display: flex;
+        height: 100vh;
+    }
+
+    .nav-links .sign-in {
+        display: block;
+        width: 140px;
+        margin: 120px auto 0 auto;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        background-color: transparent;
+        border: 2px solid var(--bg-light);
+        border-radius: 100px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textFade {
+    0% {
+        opacity: 0;
+        letter-spacing: 1px;
+    }
+
+    100% {
+        opacity: 1;
+        letter-spacing: 0px;
+    }
+}
+
+/* When mobile menu opens, animate each item */
+#menu-toggle:checked~.nav-links li {
+    opacity: 0;
+    animation: slideDown 0.45s ease forwards;
+}
+
+/* Stagger effect */
+#menu-toggle:checked~.nav-links li:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+#menu-toggle:checked~.nav-links a {
+    opacity: 0;
+    animation: textFade 0.4s ease forwards;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(1) a {
+    animation-delay: 0.10s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(2) a {
+    animation-delay: 0.15s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(3) a {
+    animation-delay: 0.20s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(4) a {
+    animation-delay: 0.25s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(5) a {
+    animation-delay: 0.30s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(6) a {
+    animation-delay: 0.35s;
+}
+
+#menu-toggle:checked~.nav-links li:nth-child(7) a {
+    animation-delay: 0.40s;
+}
