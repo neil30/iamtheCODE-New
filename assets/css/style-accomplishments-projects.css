@@ -101,6 +101,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Content 1 */
 #content-1 .container {
     position: relative;
     height: 100vh;
@@ -130,7 +131,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 150px;
+    gap: 50px;
 }
 
 #content-1 .iam-left {
@@ -167,17 +168,19 @@ html {
 #content-1 .iam-right {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: fit-content;
+    justify-content: flex-start;
+}
+
+#content-1 .right-content {
+    margin: auto;
 }
 
 #content-1 .badge-container {
     position: relative;
     display: inline-block;
-    /* shrink-wrap */
     width: fit-content;
     height: 500px;
-    width: 300px;
+    width: 260px;
     margin: 0 auto;
 }
 
@@ -260,6 +263,10 @@ html {
         width: 100%;
     }
 
+    #content-1 .iam-right {
+        width: 100%;
+    }
+
     #content-1 .iam-left h1 {
         font-size: 2.5em;
     }
@@ -270,6 +277,7 @@ html {
 
     #content-1 .badge-container {
         height: 380px;
+        width: 321px;
     }
 
     #content-1 .badge-container img {
@@ -309,23 +317,169 @@ html {
     }
 }
 
-/* WRAPPER TITLE */
-#content-2 h2 {
-    text-align: center;
-    color: #7d1e16;
-    font-size: 2rem;
-    margin-bottom: 10px;
+/* Content 2 */
+#content-2 {
+    height: fit-content;
+    padding: 5%;
+}
+
+#content-2 .iam-header {
+    display: flex;
+}
+
+#content-2 .header-left {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#content-2 .header-left h1 {
+    font-size: 3em;
     font-weight: bold;
-    margin-top: 100px;
+    padding: 0;
+    margin: 0;
 }
 
-#content-2 p {
+#content-2 .header-left h2 {
+    padding: 0;
+    margin: 0;
+    color: var(--color-primary);
+}
+
+#content-2 .header-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-2 .iam-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.card-container {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.card-wrapper {
+    position: relative;
+    width: fit-content;
+}
+
+.card {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-color: white;
+    border: 5px solid var(--color-primary);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Normal content */
+.card-content {
     text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    color: #444;
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+    padding: 0;
 }
 
+.card-content img {
+    height: 200px;
+    width: 320px;
+}
+
+/* Hover layer */
+.card-hover {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+    color: var(--text-invert);
+    border: 2px solid var(--color-primary);
+    padding: 20px;
+
+    /* Start hidden */
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    z-index: 4;
+    pointer-events: auto;
+}
+
+.card-hover h3{
+    padding: 0;
+    margin: 0;
+}
+
+.card a {
+    display: inline-block;
+    padding: 5px 5px;
+    width: 50%;
+    margin: auto;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card a:hover {
+    background-color: #ffffff;
+    color: var(--color-primary);
+}
+
+/* Hover effects */
+.card:hover .card-hover {
+    transform: translateY(0);
+}
+
+.card:hover .card-content {
+    opacity: 0;
+}
+
+/* Date stays above */
+.card-date {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 30px;
+    padding: 0 10px;
+    font-weight: bold;
+    color: var(--text-invert);
+    background-color: var(--color-primary);
+    z-index: 9;
+}
+
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* TOP BOX (the logo: HTML, CSS, JS, etc.) */
 .top-box-container {

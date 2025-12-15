@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iamtheCODE</title>
+</head>
+
+<style>
+    #code-section {
+        padding: 5%;
+    }
+
+    #code {
+        width: 100%;
+        min-height: 350px;
+        padding: 15px;
+        border: 2px solid var(--color-primary);
+        border-radius: 10px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        background-color: #1e1e1e;
+        color: #ffffff;
+        resize: vertical;
+        outline: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #code:focus {
+        border-color: var(--color-accent);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #output {
+        background-color: #000;
+        color: #0f0;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+        font-family: 'Courier New', Courier, monospace;
+        min-height: 80px;
+    }
+
+    .btn-container {
+        padding: 20px 0;
+    }
+
+    button {
+        padding: 10px 30px;
+    }
+</style>
+
+<body>
+
+    <section id="code-section">
+        <textarea id="code" placeholder="Type your JavaScript here..."></textarea>
+        <div class="btn-container">
+            <button id="runBtn">Run</button>
+        </div>
+        <pre id="output"></pre>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Define snippets
+            const snippets = {
+                act1: `const kelvin = 293;
+//kelvin is 293//
+
+const celsius = kelvin - 273;
+//celsius = kelvin - 273//
+
+let fahrenheit = celsius * (9 / 5) + 32;
+//fahrenheit= celsius * (9/5) + 32//
+
+fahrenheit = Math.floor(fahrenheit);
+//rounds off decimal values//
+
+console.log(\`The temperature is \${fahrenheit} degrees Fahrenheit.\`);
+
+// Convert to Newton
+let newton = celsius * (33 / 100);
+
+// Round down
+newton = Math.floor(newton);
+
+console.log(\`The temperature is \${newton} degrees Newton.\`);
+`,
+
+                act2: `//my current age
+const myAge = 18;
+
+let earlyYears = 2;
+earlyYears *= 10.5;
+
+let laterYears = myAge - 2;
+
+laterYears *= 4;
+
+console.log(earlyYears)
+console.log(laterYears)
+
+//my age in dog years
+let myAgeInDogYears = earlyYears + laterYears;
+
+//my name
+let myName = 'Renz Samuel'.toLowerCase();
+
+console.log(\`My name is \${myName} I am \${myAge} years old in human years which is \${myAgeInDogYears} years old in dog years.\`);
+`,
+
+                act3: `let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+
+//console.log(secretMessage.length)
+secretMessage.pop()
+//console.log(secretMessage.length)
+
+secretMessage.push('to', 'Program')
+
+secretMessage[7] = 'right'
+//console.log(secretMessage)
+
+secretMessage.shift()
+//console.log(secretMessage)
+
+secretMessage.unshift('Programming')
+//console.log(secretMessage)
+
+secretMessage.splice(6, 5, "know,")
+
+console.log(secretMessage.join(' '))
+`
+            };
+
+
+            // Get code parameter from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const codeKey = urlParams.get('code');
+
+            // Fill the textarea with the corresponding snippet
+            const codeTextarea = document.getElementById('code');
+            if (codeKey && snippets[codeKey]) {
+                codeTextarea.value = snippets[codeKey];
+            }
+
+            // Optional: run button functionality
+            const output = document.getElementById('output');
+            const runBtn = document.getElementById('runBtn');
+            runBtn.addEventListener("click", () => {
+                output.textContent = "";
+                const customConsole = {
+                    log: (...args) => {
+                        output.textContent += args.join(" ") + "\n";
+                    }
+                };
+                try {
+                    const func = new Function("console", codeTextarea.value);
+                    func(customConsole);
+                } catch (err) {
+                    output.textContent += "Error: " + err;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

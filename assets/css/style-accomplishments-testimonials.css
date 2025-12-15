@@ -103,7 +103,8 @@ html {
 
 /* Content 1 */
 #content-1 {
-    padding: 120px 5% 10% 5%;
+    height: 100vh;
+    padding: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,6 +211,10 @@ html {
 
 /* Tablets (≤ 992px) */
 @media (max-width: 992px) {
+    #content-1 {
+        height: fit-content;
+    }
+
     .testimonial-hero {
         padding: 80px 50px;
     }
@@ -229,6 +234,7 @@ html {
 @media (max-width: 768px) {
 
     #content-1 {
+        height: fit-content;
         padding: 150px 5% 10% 5%;
     }
 
