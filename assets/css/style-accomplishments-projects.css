@@ -317,13 +317,46 @@ html {
     }
 }
 
+#video-section {
+    height: fit-content;
+    padding: 0 10%;
+}
+
+#video-section .iam-parent {
+    text-align: center;
+}
+
+#video-section .iam-parent img {
+    height: 80px;
+}
+
+#video-section .iam-parent h2 {
+    color: var(--color-primary);
+    padding: 0;
+    margin: 0;
+}
+
+#video-section .iam-parent h1 {
+    color: var(--text-main);
+    font-size: 2.75em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#video-section video {
+    width: 100%;
+    border-radius: 20px;
+}
+
 /* Content 2 */
 #content-2 {
     height: fit-content;
     padding: 5%;
+    padding-bottom: 10%;
 }
 
 #content-2 .iam-header {
+    padding: 0 5%;
     display: flex;
 }
 
@@ -335,6 +368,7 @@ html {
 }
 
 #content-2 .header-left h1 {
+    color: var(--text-main);
     font-size: 3em;
     font-weight: bold;
     padding: 0;
@@ -347,11 +381,32 @@ html {
     color: var(--color-primary);
 }
 
+#content-2 .header-left .gradient-divider {
+    height: 10px;
+    width: 65%;
+    margin-top: 8px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #e53935, #ffc371);
+    margin-bottom: 23px;
+    margin-top: 10px;
+}
+
 #content-2 .header-right {
     width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+}
+
+#content-2 .header-right img {
+    height: 80px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#content-2 .header-right img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
 }
 
 #content-2 .iam-parent {
@@ -423,7 +478,7 @@ html {
     pointer-events: auto;
 }
 
-.card-hover h3{
+.card-hover h3 {
     padding: 0;
     margin: 0;
 }
@@ -478,6 +533,23 @@ html {
 @media (max-width: 600px) {
     .card-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #content-2 .iam-header {
+        flex-direction: column;
+        padding-bottom: 10%;
+    }
+
+    #content-2 .header-left {
+        width: 100%;
+    }
+
+    #content-2 .header-right {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -589,16 +661,6 @@ html {
     width: 150%;
     font-size: 45px;
 
-}
-
-.gradient-divider {
-    height: 10px;
-    width: 83%;
-    margin-top: 8px;
-    border-radius: 3px;
-    background: linear-gradient(90deg, #e53935, #ffc371);
-    margin-bottom: 23px;
-    margin-top: 10px;
 }
 
 .left-side p {
