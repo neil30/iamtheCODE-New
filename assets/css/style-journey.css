@@ -257,7 +257,7 @@ html {
     height: fit-content;
     padding: 10% 5%;
 
-    background-image: url("/assets/img/imgs-sdg/taal-bg-1.png");
+    background-image: url("assets/img/imgs-sdg/taal-bg-1.png");
     background-position: center;
     background-size: cover;
 }

@@ -198,7 +198,7 @@ html {
 
 #content-2 {
     height: fit-content;
-    background-image: url("/assets/img/imgs-sdg/taal-bg-1.png");
+    background-image: url("assets/img/imgs-sdg/taal-bg-1.png");
     background-position: center;
     background-size: cover;
     display: flex;
