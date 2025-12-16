@@ -357,6 +357,9 @@ body {
     animation-delay: 0.40s;
 }
 
+#content-1 {
+    height: 80vh;
+}
 
     .slider {
         position: relative;
@@ -412,13 +415,17 @@ body {
         flex-direction: column;
     }
 
-    .content p {
+    .content  {
         font-family: arimo;
         width: 25%;
         margin-right: 45%;
         left: 30vh;
         position: absolute;
-        top: 35%;
+        top: 25%;
         text-align: justify;
 
+    }
+
+    .content h1 {
+      color: var(--color-primary-dark);
     }

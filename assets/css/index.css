@@ -1071,7 +1071,7 @@ html {
     align-items: center;
     justify-content: flex-end;
     padding: 20px;
-    height: 550px;
+    height: 650px;
 }
 
 /* Rotate the h1 */
@@ -1092,7 +1092,7 @@ html {
 
 #content-5 .iam-right {
     width: 70%;
-    height: 550px;
+    height: 650px;
     overflow: auto;
 }
 

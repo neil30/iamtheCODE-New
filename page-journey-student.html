@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/style-journey-student.css" />
+  <link rel="stylesheet" href="assets/css/nav-bar.css" />
+  <link rel="stylesheet" href="assets/css/iam-animation.css" />
+  <link rel="stylesheet" href="assets/css/style-footer.css" />
   <title>iamtheCODE</title>
 </head>
 
@@ -12,8 +15,9 @@
   <nav class="navbar">
     <!-- LEFT SECTION -->
     <div class="left-section">
-      <img src="assets/img/iamthecodelogo-removebg-preview.png" class="left-img" alt="Logo" />
-      <span class="left-text">Taal<br>High<br>School</span>
+      <a href="index.html"><img src="assets/img/imgs-index/logos/logo-iamthecode-nav.png" class="left-img"
+          alt="Logo" /></a>
+      <span class="left-text">Taal High School</span>
     </div>
 
     <!-- MOBILE TOGGLE -->
@@ -23,85 +27,176 @@
     <!-- MIDDLE NAV LINKS -->
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="page-about.html">About</a></li>
-      <li><a href="#" class="active">Journey</a></li>
-      <li><a href="page-accomplishments.html">Accomplishments</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle active">About</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-content" href="page-about-iamthecode.html">iamtheCODE</a></li>
+          <li><a class="dropdown-content" href="page-about-implementation.html">Implementation Team</a></li>
+        </ul>
+      </li>
+      <li><a href="page-journey.html">Journey</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Accomplishments</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-content" href="page-accomplishments-projects.html">Sample Projects</a></li>
+          <li><a class="dropdown-content" href="page-accomplishments-testimonials.html">Testimonials</a></li>
+        </ul>
+      </li>
       <li><a href="page-sdg.html">SDG</a></li>
-      <li><a href="page-faqs.html">FAQs</a></li>
       <li><a href="page-acknowledgement.html">Acknowledgement</a></li>
+
+      <a class="sign-in" href="https://iamthecode.percipio.com/login?state=%2F#/">Sign in</a>
+
     </ul>
 
+
     <!-- RIGHT SECTION -->
-    <div class="right-section">
-      <img src="assets/img/sign_in-removebg-preview.png" class="right-img" alt="Placeholder" />
+    <div class=" right-section">
+      <a href="https://iamthecode.percipio.com/login?state=%2F#/"><img
+          src="assets/img/imgs-index/logos/logo-sign-in-nav.png" class="right-img" alt="Placeholder" /></a>
     </div>
   </nav>
 
-
+  <section id="content-1">
     <div class="slider">
-        <div class="slides" style="transform: translateX(-200%);">
-            <img src="assets/img/imgs-journey/S1.JPG" alt="Slide 1">
-            <img src="assets/img/imgs-journey/S2.JPG" alt="Slide 2">
-            <img src="assets/img/imgs-journey/S3.JPG" alt="Slide 3">
-            <img src="assets/img/imgs-journey/S4.JPG" alt="Slide 4">
+      <div class="slides" style="transform: translateX(-200%);">
+        <img src="assets/img/imgs-journey/S1.jpg" alt="Slide 1">
+        <img src="assets/img/imgs-journey/S2.jpg" alt="Slide 2">
+        <img src="assets/img/imgs-journey/S3.jpg" alt="Slide 3">
+        <img src="assets/img/imgs-journey/S4.jpg" alt="Slide 4">
 
-        </div>
-        <div class="arrow left">❮</div>
-        <div class="arrow right">❯</div>
+      </div>
+      <div class="arrow left">❮</div>
+      <div class="arrow right">❯</div>
     </div>
 
     <div class="content">
-        <p> The orientation of THS student participants for the Pilot Implementation of Project iamtheCODE was held on
-            February 18, 2025, at the Taal High School Covered Court. The event introduced students to the program’s
-            goals, structure, and the opportunities it offers in coding, digital literacy, and STEAM learning. Learners
-            were also oriented on the 12-module journey that will guide their growth as young innovators.
+      <h1>Student Orientation</h1>
+      <p> The orientation of THS student participants for the Pilot Implementation of Project iamtheCODE was held on
+        February 18, 2025, at the Taal High School Covered Court. The event introduced students to the program’s
+        goals, structure, and the opportunities it offers in coding, digital literacy, and STEAM learning. Learners
+        were also oriented on the 12-module journey that will guide their growth as young innovators.
 
-            The activity highlighted the importance of creativity, problem-solving, and collaboration as students begin
-            their iamtheCODE experience. With the support of school leaders and facilitators, the initiative aims to
-            empower learners to build confidence, develop future-ready skills, and become active contributors to digital
-            innovation.</p>
+        The activity highlighted the importance of creativity, problem-solving, and collaboration as students begin
+        their iamtheCODE experience. With the support of school leaders and facilitators, the initiative aims to
+        empower learners to build confidence, develop future-ready skills, and become active contributors to digital
+        innovation.</p>
     </div>
+  </section>
 
-    <script>
-        const slides = document.querySelector('.slides');
-        const images = document.querySelectorAll('.slides img');
-        const leftArrow = document.querySelector('.arrow.left');
-        const rightArrow = document.querySelector('.arrow.right');
+  <footer id="footer-top" class="site-footer">
 
-        let currentIndex = 0;
+    <div class="footer-bg-overlay"></div>
 
-        function showSlide(index) {
-            if (!images || images.length === 0) return;
-            if (index < 0) {
-                currentIndex = images.length - 1;
-            } else if (index >= images.length) {
-                currentIndex = 0;
-            } else {
-                currentIndex = index;
-            }
-            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+    <h3>SITE LINKS</h3>
+    <div class="footer-content container">
 
-        // initialize
-        showSlide(0);
+      <div class="footer-columns">
 
-        if (leftArrow) {
-            leftArrow.addEventListener('click', () => {
-                showSlide(currentIndex - 1);
-            });
-        }
+        <div class="footer-col">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="page-about-iamthecode.html">About</a></li>
+            <ul>
+              <li><a href="page-about-iamthecode.html">iamtheCODE</a></li>
+              <li><a href="page-about-implementation.html">Implementation Team</a></li>
+            </ul>
+          </ul>
+        </div>
 
-        if (rightArrow) {
-            rightArrow.addEventListener('click', () => {
-                showSlide(currentIndex + 1);
-            });
-        }
+        <div class="footer-col">
+          <ul>
+            <li><a href="page-journey.html">Journey</a></li>
+            <li><a href="page-accomplishments-projects.html">Accomplishments</a></li>
+            <ul>
+              <li><a href="page-accomplishments-projects.html">Sample Project</a></li>
+              <li><a href="page-accomplishments-testimonials.html">Testimonials</a></li>
+            </ul>
+          </ul>
+        </div>
 
-        // Optional: auto-slide every 4 seconds
-        setInterval(() => {
-            showSlide(currentIndex + 1);
-        }, 2000);
-    </script>
+        <div class="footer-col">
+          <ul>
+            <li><a href="page-sdg.html">SDG</a></li>
+            <li><a href="page-acknowledgement.html">Acknowledgement</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="footer-line">
+
+      <div class="footer-icons-line">
+        <div class="line"></div>
+
+        <div class="footer-icons">
+          <a href="#" class="icon-circle">
+            <img src="assets/img/imgs-footer/footer-fb.png" alt="Facebook">
+          </a>
+          <a href="#" class="icon-circle">
+            <img src="assets/img/imgs-footer/footer-email.png" alt="Email">
+          </a>
+        </div>
+
+        <div class="line"></div>
+      </div>
+
+    </div>
+  </footer>
+
+  <section id="footer-bottom">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="assets/img/imgs-footer/logo-ths.png" alt="school logo">
+      </div>
+
+      <p class="copyright">
+        © 2025 Taal High School | iamtheCODE journey<br>
+        All rights reserved.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      if (!images || images.length === 0) return;
+      if (index < 0) {
+        currentIndex = images.length - 1;
+      } else if (index >= images.length) {
+        currentIndex = 0;
+      } else {
+        currentIndex = index;
+      }
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // initialize
+    showSlide(0);
+
+    if (leftArrow) {
+      leftArrow.addEventListener('click', () => {
+        showSlide(currentIndex - 1);
+      });
+    }
+
+    if (rightArrow) {
+      rightArrow.addEventListener('click', () => {
+        showSlide(currentIndex + 1);
+      });
+    }
+
+    // Optional: auto-slide every 4 seconds
+    setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 2000);
+  </script>
 
 
   <script src="javascript/script.js"></script>
