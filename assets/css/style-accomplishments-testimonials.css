@@ -265,13 +265,20 @@ html {
 
 #content-2 {
     width: 100vw;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    background-color: var(--bg-light);
     padding: 5% 0;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(255, 120, 120, 0.25),
+            transparent 60%),
+        linear-gradient(135deg,
+            #b11226 0%,
+            #c4162a 55%,
+            #d62d2d 80%,
+            #e24a2a 100%);
 }
 
 #content-2 .card-container-wrapper {
@@ -335,7 +342,7 @@ html {
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
-    color: black;
+    color: var(--bg-light);
     border: none;
     font-size: 50px;
     padding: 10px;
@@ -379,6 +386,7 @@ html {
     #content-2 .nav-button {
         font-size: 40px;
         padding: 5px;
+        color: var(--bg-dark);
     }
 
     #content-2 .nav-left {
@@ -509,4 +517,176 @@ html {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* Content 3 */
+#content-3 {
+    height: fit-content;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg-dark);
+}
+
+#content-3 .container .quote {
+    height: 30px;
+}
+
+#content-3 .container h2 {
+    padding: 5px 0;
+    margin: 0;
+}
+
+#content-3 .container h4 {
+    color: var(--text-lighter);
+    padding: 5px 0;
+    margin: 0;
+}
+
+#content-3 .comment {
+    position: relative;
+    border-radius: 20px;
+    margin: 80px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-3 .comment .left-side {
+    height: 350px;
+    border-radius: 25px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.473);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-3 .comment .left-side img {
+    height: 100%;
+    border-radius: 25px;
+}
+
+#content-3 .comment .right-side {
+    height: 280px;
+    padding: 30px;
+    margin-right: 15%;
+    border-radius: 0 25px 25px 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    background-color: var(--bg-light);
+}
+
+/* Reverse */
+#content-3 .reverse-comment {
+    position: relative;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-3 .reverse-comment .right-side {
+    height: 350px;
+    border-radius: 25px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.473);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-3 .reverse-comment .right-side img {
+    height: 100%;
+    border-radius: 25px;
+}
+
+#content-3 .reverse-comment .left-side {
+    height: 280px;
+    padding: 30px;
+    margin-left: 15%;
+    border-radius: 25px 0 0 25px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    background-color: var(--bg-light);
+}
+
+#content-3 .sdg-divider {
+    position: absolute;
+    height: 15px;
+    width: 150%;
+    margin-top: 8px;
+    border-radius: 3px;
+    background: linear-gradient(to right,
+            #ed3d4a 0% 5%,
+            #e5b44b 5% 10%,
+            #5bab48 10% 15%,
+            #d32f3a 15% 20%,
+            #ff532b 20% 25%,
+            #25c8e9 25% 30%,
+            #fdcc03 30% 35%,
+            #b42e53 35% 40%,
+            #ff7e30 40% 45%,
+            #e7317b 45% 50%,
+            #ffad2f 50% 55%,
+            #cc9b3c 55% 60%,
+            #4f8e57 60% 65%,
+            #01a7e1 65% 70%,
+            #66c739 70% 75%,
+            #007dad 75% 80%,
+            #1f5b7d 80% 85%,
+            #66c739 85% 90%,
+            #007dad 90% 95%,
+            #1f5b7d 95% 100%);
+
+    bottom: 0;
+    left: -10px;
+}
+
+@media (max-width: 768px) {
+
+    #content-3 .comment {
+        flex-direction: column;
+        border: 25px;
+        overflow: hidden;
+    }
+
+    #content-3 .comment .left-side,
+    #content-3 .reverse-comment .right-side {
+        width: 100%;
+        height: 250px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    #content-3 .comment .right-side {
+        height: fit-content;
+        margin-right: 0;
+        border-radius: 0;
+    }
+
+    /* Reverse */
+    #content-3 .reverse-comment {
+        flex-direction: column-reverse;
+        border: 25px;
+        overflow: hidden;
+    }
+
+    #content-3 .reverse-comment .left-side {
+        height: fit-content;
+        margin-left: 0;
+        border-radius: 0;
+    }
 }
