@@ -231,7 +231,7 @@ html {
     height: fit-content;
     background-image:
         linear-gradient(to bottom, rgba(184, 45, 45, 0.137), rgba(54, 5, 5, 0.747)),
-        url("../img/imgs-index/about/about-content2-bg-2.png");
+        url("../img/imgs-about/about-content2-bg-2.png");
     padding: 8% 10%;
 }
 
