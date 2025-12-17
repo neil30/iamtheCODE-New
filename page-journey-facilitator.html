@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/style-journey-facilitator.css" />
+  <link rel="stylesheet" href="assets/css/style-journey-orientation.css" />
   <link rel="stylesheet" href="assets/css/nav-bar.css" />
   <link rel="stylesheet" href="assets/css/iam-animation.css" />
   <link rel="stylesheet" href="assets/css/style-footer.css" />
@@ -57,27 +57,64 @@
     </div>
   </nav>
 
-
   <section id="content-1">
-    <div class="slider">
-      <div class="slides" style="transform: translateX(-100%);">
-        <img src="assets/img/imgs-journey/F1.jpg" alt="Slide 1">
-        <img src="assets/img/imgs-journey/F2.jpg" alt="Slide 2">
-        <img src="assets/img/imgs-journey/F3.jpg" alt="Slide 3">
-        <img src="assets/img/imgs-journey/F4.jpg" alt="Slide 4">
-        <img src="assets/img/imgs-journey/F5.jpg" alt="Slide 4">
-      </div>
-      <div class="arrow left">❮</div>
-      <div class="arrow right">❯</div>
-    </div>
+    <div class="container">
 
-    <div class="content">
-      <h1>Facilitator Orientation</h1>
-      <p> The iamtheCODE Facilitators Orientation held on February 07, 2025, at the JHS Computer Laboratory served as
-        a meaningful gathering for teachers dedicated to guiding learners through the program. During the session,
-        facilitators aligned on objectives, strategies, and session plans to ensure a smooth and impactful
-        implementation of all modules. The meeting strengthened collaboration, clarified roles, and reinforced the
-        shared commitment to providing students with an inspiring and supportive digital learning experience.</p>
+      <div class="iam-parent">
+
+        <div class="iam-left">
+          <div class="content">
+            <h1>Facilitator Orientation</h1>
+            <p>The iamtheCODE Facilitators Orientation held on February 07, 2025, at the JHS Computer Laboratory served
+              as a meaningful gathering for teachers dedicated to guiding learners through the program. During the
+              session, facilitators aligned on objectives, strategies, and session plans to ensure a smooth and
+              impactful implementation of all modules. The meeting strengthened collaboration, clarified roles, and
+              reinforced the shared commitment to providing students with an inspiring and supportive digital learning
+              experience.</p>
+          </div>
+        </div>
+
+        <div class="iam-right">
+          <div class="slideshow-container">
+
+            <div class="slide fade">
+              <img src="assets/img/imgs-journey/F1.jpg" alt="Slide 1">
+            </div>
+
+            <div class="slide fade">
+              <img src="assets/img/imgs-journey/F2.jpg" alt="Slide 2">
+            </div>
+
+            <div class="slide fade">
+              <img src="assets/img/imgs-journey/F3.jpg" alt="Slide 3">
+            </div>
+
+            <div class="slide fade">
+              <img src="assets/img/imgs-journey/F4.jpg" alt="Slide 3">
+            </div>
+
+            <div class="slide fade">
+              <img src="assets/img/imgs-journey/F5.jpg" alt="Slide 3">
+            </div>
+
+            <!-- Controls -->
+            <a class="prev" onclick="changeSlide(-1)">❮</a>
+            <a class="next" onclick="changeSlide(1)">❯</a>
+
+            <!-- Dots -->
+            <div class="dots">
+              <span class="dot" onclick="setSlide(1)"></span>
+              <span class="dot" onclick="setSlide(2)"></span>
+              <span class="dot" onclick="setSlide(3)"></span>
+              <span class="dot" onclick="setSlide(4)"></span>
+              <span class="dot" onclick="setSlide(5)"></span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -155,45 +192,48 @@
   </section>
 
   <script>
-    const slides = document.querySelector('.slides');
-    const images = document.querySelectorAll('.slides img');
-    const leftArrow = document.querySelector('.arrow.left');
-    const rightArrow = document.querySelector('.arrow.right');
+    let slideIndex = 1;
+    let timer;
 
-    let currentIndex = 0;
+    showSlide(slideIndex);
+    autoSlide();
 
-    function showSlide(index) {
-      if (!images || images.length === 0) return;
-      if (index < 0) {
-        currentIndex = images.length - 1;
-      } else if (index >= images.length) {
-        currentIndex = 0;
-      } else {
-        currentIndex = index;
-      }
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    function changeSlide(n) {
+      clearTimeout(timer);
+      showSlide(slideIndex += n);
+      autoSlide();
     }
 
-    // initialize
-    showSlide(0);
-
-    if (leftArrow) {
-      leftArrow.addEventListener('click', () => {
-        showSlide(currentIndex - 1);
-      });
+    function setSlide(n) {
+      clearTimeout(timer);
+      showSlide(slideIndex = n);
+      autoSlide();
     }
 
-    if (rightArrow) {
-      rightArrow.addEventListener('click', () => {
-        showSlide(currentIndex + 1);
-      });
+    function showSlide(n) {
+      let slides = document.querySelectorAll(".slide");
+      let dots = document.querySelectorAll(".dot");
+
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+
+      slides.forEach(slide => slide.style.display = "none");
+      dots.forEach(dot => dot.classList.remove("active"));
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].classList.add("active");
     }
 
-    // Optional: auto-slide every 4 seconds
-    setInterval(() => {
-      showSlide(currentIndex + 1);
-    }, 2000);
+    function autoSlide() {
+      timer = setTimeout(() => {
+        slideIndex++;
+        showSlide(slideIndex);
+        autoSlide();
+      }, 4000); // 4 seconds
+    }
   </script>
+
+
 
   <script src="javascript/script.js"></script>
 </body>
