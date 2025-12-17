@@ -561,12 +561,12 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-invert);
+    color: var(--text-main);
     font-weight: bold;
 }
 
 #content-5 .left-wrapper .text-learning {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light);
     padding: 5px 30px 5px 60px;
     border-radius: 10px;
     text-align: right;
