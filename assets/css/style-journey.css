@@ -237,7 +237,8 @@ html {
 }
 
 #content-1 video {
-    width: 80%;
+    height: 550px;
+    width: auto;
     border-radius: 20px;
 }
 
