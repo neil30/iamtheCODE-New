@@ -407,6 +407,10 @@ html {
 #content-4 {
     padding: 0 5% 5% 5%;
     height: fit-content;
+
+    background-image:
+        linear-gradient(to bottom, rgba(184, 45, 45, 0.137), rgba(54, 5, 5, 0.747)),
+        url("../img/imgs-about/about-content2-bg-2.png");
 }
 
 #content-4 .iam-parent {
